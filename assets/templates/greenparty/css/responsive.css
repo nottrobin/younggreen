@@ -62,8 +62,12 @@
     }
     .sidepanel {
         display: none;
+    }   
+    .gu3 .row {
+        width: auto;
     }
     .gu2 {
-        width: 100%;
+        width: auto;
+        float: none;
     }
  }
