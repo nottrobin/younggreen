@@ -1,0 +1,69 @@
+/**
+ * Main canvas and header don't need to be a fixed width
+ */
+.canvas, .header .inner {
+    max-width: 860px;
+    width: auto;
+}
+.gu3 {
+    max-width: 826px;
+    width: auto;
+}
+
+/**
+ * Main navigation
+ */
+.header ul {
+    display: inline-block;
+    margin: 10px;
+}
+
+/**
+ * Search box
+ * Doesn't need to float right
+ * Will flow better if it just sits to the right of the nav
+ */
+#search {
+    display: inline-block;
+    float: none;
+    margin: 7px 13px;
+}
+
+#ajaxSearch_submit, #ajaxSearch_submit {
+    float: none;
+    display: inline-block;
+}
+
+/* don't pad it so much */
+.canvas {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.bannerbuttons {
+    text-align: center;
+    padding: 9px;
+    margin: 0;
+}
+.bannerbuttons a:link, .bannerbuttons a:visited {
+    display: inline-block;
+    float: none;
+}
+.bannerbuttons a, .bannerbuttons a.button1, .bannerbuttons a.button2, .bannerbuttons a.button3  {
+    margin: 9px;
+}
+
+/**
+ * When the page is smaller than x width
+ */
+ @media all and (max-width: 860px) {
+    #bannerslider {
+        display: none;
+    }
+    .sidepanel {
+        display: none;
+    }
+    .gu2 {
+        width: 100%;
+    }
+ }
