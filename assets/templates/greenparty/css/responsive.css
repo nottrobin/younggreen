@@ -1,5 +1,6 @@
 /**
- * Main canvas and header don't need to be a fixed width
+ * Change fixed widths to max-width
+ * to allow the page to become more narrow
  */
 .canvas, .header .inner, .footer .inner {
     max-width: 860px;
@@ -12,29 +13,41 @@
 
 /**
  * Main navigation
+ * make the spacing better
+ * including adding vertical space for better flowing
+ * onto multiple lines
  */
 .header ul {
     display: inline-block;
-    margin: 10px;
+    margin: 5px 10px;
+}
+.header ul li, .footer ul li {
+    margin: 5px 0;
+}
+.header ul li a, .footer ul li a {
+    padding: 0.25em 0.5em;
 }
 
 /**
  * Search box
  * Doesn't need to float right
  * Will flow better if it just sits to the right of the nav
+ * then if it wraps underneath it will sit on the left which looks better
  */
 #search {
     display: inline-block;
     float: none;
     margin: 7px 13px;
 }
-
 #ajaxSearch_submit, #ajaxSearch_submit {
     float: none;
     display: inline-block;
 }
 
-/* don't pad it so much */
+/** 
+ * remove padding from the main container
+ * this allows other elements to manage their own padding as they wrap
+ */
 .canvas {
     padding-top: 1px;
     padding-bottom: 0;
@@ -45,6 +58,11 @@
     margin: 16px 0 0 0;
 }
 
+/**
+ * The main promotional items
+ * should be centered in the screen
+ * and wrap nicely
+ */
 .bannerbuttons {
     text-align: center;
     padding: 9px 0;
@@ -62,7 +80,20 @@
 }
 
 /**
- * When the page is smaller than x width
+ * Promotions above the footer
+ * Make sure the footer is footer promotions wrap nicely
+ * by adding some vertical spacing
+ */
+.footerbuttons div {
+    margin: 25px 25px 15px 25px;
+    padding: 0;
+}
+
+/**
+ * When the page is smaller than the max width
+ * - hide the slideshow (bannerslider)
+ * - hide the side panel and adjust the other columns accordingly
+ * - hide the background
  */
  @media all and (max-width: 860px) {
     #bannerslider {
@@ -70,12 +101,15 @@
     }
     .sidepanel {
         display: none;
-    }   
+    }
     .gu3 .row {
         width: auto;
     }
     .gu2 {
         width: auto;
         float: none;
+    }
+    body {
+        background-image: none !important;
     }
  }
